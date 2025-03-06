@@ -1,16 +1,16 @@
 
-### Discord Blocker
+# Discord Blocker
 
 Have you ever looked at the time and noticed it was 3 am and you're still in voice chat with the boys? Wish you could put a stop to that but also don't trust 3rd party apps with lots of permissions?
 
 I created a lightweight customizable shell script as a tiny project. You can read all the code yourself in 2 minutes.
 
 
-# How it works
+### How it works
 This shell script is a cron job that blocks discord on my computer by maintaining a blacklist of IPs from the discord process and adding them to the pfctl mac firewall command line interface.
 
 
-# Questions you might ask
+### Questions you might ask
 
 Why not just shut down the process: I use both the app and the web client, and they use similar ip addresses. Instead of shutting down the process and trying to close certain tabs I figured go simpler to the shared root of access (the tcp and udp files that are the channel to discord servers). I was also trying to learn how the mac firewall works.
 
@@ -107,7 +107,7 @@ The command for that is: `sort -u /etc/pf.discord.table -o /etc/pf.discord.table
 Finally, we have to run this every minute and decide when it should be shut off:
 
 
-# Cron job
+### Cron job
 
 cron jobs are per user (cron tab), and cron jobs that need root permissions have to be run as root, so to do that `sudo crontab -e` to edit the root's cron jobs.
 
@@ -118,7 +118,7 @@ Then
 `crontab -l` (lists all cron jobs)
 
 
-* Running manually:
+### Running manually:
 `./live_discord_firewall.sh`
 
 
