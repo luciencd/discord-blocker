@@ -3,7 +3,7 @@
 
 Have you ever looked at the time and noticed it was 3 am and you're still in voice chat with the boys? Wish you could put a stop to that but also don't trust 3rd party apps with lots of permissions?
 
-I created a lightweight customizable shell script as a tiny project. You can read all the code yourself in 2 minutes.
+To solve this, I created a lightweight customizable shell script as a tiny project. You can read all the code yourself in 2 minutes.
 
 
 ### How it works
