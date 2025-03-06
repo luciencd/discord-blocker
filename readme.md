@@ -37,10 +37,10 @@ So Discord connections to the outside world can be listed via
 
 They are TCP and UDP connections that are opened by the discord process
 
-If you create a firewall in `/etc/pf.conf`, you can block those connections and cause discord to not work
+If you create a firewall in `/etc/pf.conf` blocking those connectiions, you can disable discord.
 
 
-So if then you create a python file to enable or disable that set of rules, you can on a timer, disable or reenable discord (or any other app assu)
+If then you create a Shell script to enable or disable that set of rules, at specific times, you can control the access of said process.
 
 
 The following lines will block the listed IPs from making a connection to the applications on my computer
@@ -96,7 +96,7 @@ Then pipe it to the pf.discord.table file
 `| sudo tee /etc/pf.discord.table > /dev/null`
 
 
-At this point, I thought I had solved the problem, but then I realized discord dynamically generates new IP addresses to overcome blocked ones. So you can't just refresh the IP list every minute, the old IPs will come back through as they leave the lsof output.
+At this point, I thought I had solved the problem, but then I realized discord dynamically generates new IP addresses if the client doesnt immediately connect to the default ones. So you can't just refresh the IP list every minute, the old IPs will come back through as they leave the lsof output.
 
 
 So I have to maintain a blacklist of IPs and not get rid of any that dissappear and make sure the list doesnt get too big and out of hand. The perfect solution is to just maintain a secondary ip list, and append to it ips from lsof, and then make it a unique set of rows.
