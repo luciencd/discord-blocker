@@ -23,7 +23,7 @@ sort -u /etc/pf.discord.table -o /etc/pf.discord.table
 
 
 
-if [ "$hour" -ge 23 ] && [ "$hour" -lt 6 ]; then # don't bother making this into an arg... will make this project take 10x longer.
+if [ "$hour" -ge 23 ] || [ "$hour" -lt 6 ]; then # don't bother making this into an arg... will make this project take 10x longer.
 	#daytime ban - change to nighttime ban.
 
 	# replace contents of the firewall blacklist with existing blacklist file
